@@ -1,0 +1,241 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2962856860961655 0.09708601723637435 0.9501521443809421 2.537941201800005
+  position 1.349249045894374 -0.4090264421404099 1.1919077405008878
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  translation -0.002671752880618181 -0.0007490204250451567 0.01957011856887343
+  rotation -0.10766729242538546 0.14280314434443428 0.9838775412149262 0.016994948289763823
+  children [
+    DEF joint1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.6821115348667146
+        axis 0 0 1
+        anchor 0 0 0.04
+      }
+      device [
+        RotationalMotor {
+          name "motor1"
+          minPosition -3.14
+          maxPosition 3.14
+          maxTorque 10000
+        }
+        PositionSensor {
+          name "sensor1"
+          resolution 0.01
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.05
+        rotation 0 0 1 0.6821115348667149
+        children [
+          DEF joint2 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.24107679361941245
+              axis 0 1 0
+              anchor 0 0 0.05
+            }
+            device [
+              RotationalMotor {
+                name "motor2"
+                minPosition -3.14
+                maxPosition 3.14
+                maxTorque 10000
+              }
+              PositionSensor {
+                name "sensor2"
+                resolution 0.01
+              }
+            ]
+            endPoint Solid {
+              translation 0.04058723122190526 0 0.21508384736775404
+              rotation 0 1 0 0.24107679361941162
+              children [
+                DEF joint3 HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 2.067564333045718
+                    axis 0 1 0
+                    anchor 0 0 0.22
+                  }
+                  device [
+                    PositionSensor {
+                      name "sensor3"
+                      resolution 0.01
+                    }
+                    RotationalMotor {
+                      name "motor3"
+                      minPosition -3.14
+                      maxPosition 3.14
+                      maxTorque 10000
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0.15824294568394942 0 0.1342143943236009
+                    rotation 0 1 0 2.067564333045718
+                    children [
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position 2.968973965568799e-06
+                          axis 0 1 0
+                          anchor 0 0 0.22
+                        }
+                        device [
+                          PositionSensor {
+                            name "sensor4"
+                            resolution 0.01
+                          }
+                          RotationalMotor {
+                            name "motor4"
+                            maxTorque 10000
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 0 0 0.22
+                          rotation 0 1 0 1.5619942762111416e-06
+                          children [
+                            Solid {
+                              translation -3.208e-10 -1.01632e-13 0.03
+                              rotation 0.9653654670923678 0.03405581647791691 -0.258669125157133 -2.888765307179586
+                              children [
+                                DEF pen Pen {
+                                  translation 4.5459e-09 2.23569e-10 -2.2059e-08
+                                  rotation 0.00829728670379422 -0.23523290655064794 -0.9719036138985641 -1.7006453071795864
+                                  children [
+                                    Shape {
+                                      appearance PBRAppearance {
+                                      }
+                                      geometry Box {
+                                        size 0.01 0.01 0.05
+                                      }
+                                    }
+                                  ]
+                                  inkDensity 1
+                                }
+                              ]
+                              boundingObject DEF hand Shape {
+                              }
+                              physics Physics {
+                              }
+                            }
+                            DEF hand Shape {
+                              appearance BrushedAluminium {
+                              }
+                              geometry Box {
+                                size 0.05 0.05 0.05
+                              }
+                            }
+                          ]
+                          boundingObject USE hand
+                          physics Physics {
+                          }
+                          linearVelocity -0.03977703963950748 0.1251718633922571 0.0014789855637859536
+                          angularVelocity 0.024623020728004652 -0.02519521532875593 0.30011073251825493
+                        }
+                      }
+                      DEF arm2 Shape {
+                        appearance BrushedAluminium {
+                        }
+                        geometry Box {
+                          size 0.05 0.05 0.4
+                        }
+                      }
+                    ]
+                    boundingObject Pose {
+                      children [
+                        Box {
+                          size 0.05 0.05 0.4
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density 100
+                    }
+                    linearVelocity -0.009206783682120193 0.07902069397239365 -0.004908132532802115
+                    angularVelocity 0.024635023893488227 -0.02520705478288423 0.3001816372144411
+                  }
+                }
+                DEF arm1 Shape {
+                  appearance BrushedAluminium {
+                  }
+                  geometry Box {
+                    size 0.05 0.05 0.4
+                  }
+                }
+              ]
+              boundingObject Pose {
+                children [
+                  Box {
+                    size 0.05 0.05 0.4
+                  }
+                ]
+              }
+              physics Physics {
+                density 100
+              }
+              linearVelocity 0.005922917041141342 0.01970582182584866 -0.00417285086042259
+              angularVelocity -0.06301370694070901 0.0807088913888255 0.3002715377797478
+            }
+          }
+          DEF rotate Shape {
+            appearance BrushedAluminium {
+            }
+            geometry Box {
+              size 0.05 0.05 0.05
+            }
+          }
+        ]
+        boundingObject Pose {
+          children [
+            Box {
+              size 0.05 0.05 0.05
+            }
+          ]
+        }
+        physics Physics {
+          density 100
+        }
+        linearVelocity 0.00022557331677326494 -6.34954330617587e-05 -2.482683365521168e-06
+        angularVelocity 0.0009773392412171268 0.003395973487101846 0.3003473013383326
+      }
+    }
+    DEF body Shape {
+      appearance BrushedAluminium {
+      }
+      geometry Box {
+        size 0.5 0.5 0.05
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "my_controller"
+  supervisor TRUE
+  linearVelocity 7.333861075848314e-05 -1.4905526345923857e-05 -2.077007664229326e-06
+  angularVelocity 0.0002797611823685323 0.002828458160772727 -0.0001588382378928866
+}
+RectangleArena {
+  floorSize 5 5
+}
+DEF TARGET Pose {
+  translation 0.375059 0.459793 0.18
+  rotation 0 0 1 -0.785395307179586
+  children [
+    Shape {
+      geometry Plane {
+      }
+    }
+  ]
+}
